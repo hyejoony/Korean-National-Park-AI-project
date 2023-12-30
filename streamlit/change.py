@@ -627,7 +627,7 @@ def add_park_boundaries(my_map, park_name):
 
 def get_region_data(region):
     if region == '수도권':
-        model_average_file = '권역별_pkl\ModelAverage_수도권ver1.pkl'
+        model_average_file = '권역별_pkl/ModelAverage_수도권ver1.pkl'
         data_file = '권역별pkl\\AcuallyData_수도권ver1.pkl'
         threshold = 0.4416666666666666
         variables = ['bare', 'crops', 'VV', 'built', 'water', 'slope', 'aspect', 'elevation']
@@ -636,7 +636,7 @@ def get_region_data(region):
         auc_pr = 0.842519
 
     elif region == '영남권':
-        model_average_file = '권역별_pkl\ModelAverage_영남권ver1.pkl'
+        model_average_file = '권역별_pkl/ModelAverage_영남권ver1.pkl'
         data_file = '권역별pkl\\AcuallyData_영남권ver1.pkl'
         threshold = 0.5083333333333333
         variables = ['water', 'aspect', 'built', 'trees', 'crops', 'slope', 'elevation']
@@ -645,7 +645,7 @@ def get_region_data(region):
         auc_pr = 0.734642
 
     elif region == '호남권':
-        model_average_file = '권역별_pkl\ModelAverage_호남권ver1.pkl'
+        model_average_file = '권역별_pkl/ModelAverage_호남권ver1.pkl'
         data_file = '권역별pkl\\AcuallyData_호남권ver1.pkl'
         threshold = 0.6083333333333332
         variables = ['water', 'susm', 'aspect', 'built', 'slope', 'trees', 'crops', 'elevation']
@@ -654,7 +654,7 @@ def get_region_data(region):
         auc_pr = 0.861038
 
     elif region == '충청권':
-        model_average_file = '권역별_pkl\ModelAverage_충청권ver1.pkl'
+        model_average_file = '권역별_pkl/ModelAverage_충청권ver1.pkl'
         data_file = '권역별pkl\\AcuallyData_충청권ver1.pkl'
         threshold = 0.5166666666666666
         variables = ['aspect', 'grass', 'water', 'built', 'crops', 'slope', 'trees', 'elevation']
@@ -663,7 +663,7 @@ def get_region_data(region):
         auc_pr = 0.825055
 
     else:  # 강원권
-        model_average_file = '권역별_pkl\ModelAverage_강원권ver1.pkl'
+        model_average_file = '권역별_pkl/ModelAverage_강원권ver1.pkl'
         data_file = '권역별pkl\\AcuallyData_강원권ver1.pkl'
         threshold = 0.4499999999999999
         variables = ['water', 'aspect', 'slope', 'trees', 'crops', 'built', 'elevation']

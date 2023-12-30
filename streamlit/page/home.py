@@ -17,7 +17,7 @@ def app():
         return "data:image/png;base64," + encoded_string
 
     # 2.이미지 파일을 Base64로 인코딩(그냥 경로 복붙은 작동 안됨)
-    encoded_image1 = get_image_base64("./image/homepage.png")
+    encoded_image1 = get_image_base64("./streamlit/image/homepage.png")
 
     st.title("반달이의 눈 : 국립공원 관리 서비스")
 
@@ -60,7 +60,7 @@ def app():
 
     #마크 다운바(분리 bar)
     st.markdown('<hr style="border:1px light gray;"/>', unsafe_allow_html=True)
-    st.write('※ 사용에 불편한 점이 생기면 개발자(✉️ eye.of.bandal@gmail.com )에게 편히 연락주세요.')
+    st.write('※ 사용에 불편한 점이 생기면 개발자(✉️ eye_of_bandal@gmail.com )에게 편히 연락주세요.')
 
 # launch
 if __name__  == "__main__" :

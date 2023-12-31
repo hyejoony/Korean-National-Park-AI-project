@@ -369,7 +369,7 @@ def app():
                 ax1.bar(rdf_aggregated.index, rdf_aggregated['pet'], color=color_pet, label='평균 증발산량', alpha=0.2, width=6)
                 ax1.set_xlabel('Date')
                 ax1.tick_params(axis='y', labelcolor='black')
-                ax1.legend(loc='upper right')
+                ax1.legend(ncol=2)
                 
                 # 지하수 재충전량 그래프를 그릴 두 번째 축을 만듭니다.
                 ax2 = ax1.twinx() 

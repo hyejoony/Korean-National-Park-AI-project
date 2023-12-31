@@ -18,6 +18,7 @@ import geemap.foliumap as eefolium  # eefolium 버전 사용
 
 import change, parks
 import matplotlib.font_manager as fm
+import matplotlib
 
 def app():
     matplotlib.rcdefaults()

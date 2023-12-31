@@ -20,13 +20,12 @@ import change, parks
 import matplotlib.font_manager as fm
 
 def app():
-
+    fm._rebuild()
     font_path = './streamlit/font/malgun.ttf'
     # 폰트 프로퍼티 설정
-    #font_prop = fm.FontProperties(fname=font_path, size=12)
-    plt.rcParams['font.family'] = 'Malgun Gothic'
+    font_prop = fm.FontProperties(fname=font_path, size=12)
     # matplotlib의 폰트를 설정
-    # plt.rcParams['font.family'] = font_prop.get_name()
+    plt.rcParams['font.family'] = font_prop.get_name()
     
     
     # 페이지 제목 설정

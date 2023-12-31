@@ -17,6 +17,7 @@ from datetime import datetime, timedelta
 import geemap.foliumap as eefolium  # eefolium 버전 사용 
 
 import change, parks
+import matplotlib
 import matplotlib.font_manager as fm
 
 def app():

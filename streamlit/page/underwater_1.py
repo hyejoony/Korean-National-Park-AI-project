@@ -20,11 +20,15 @@ import change, parks
 import matplotlib.font_manager as fm
 
 def app():
-    font_path = './streamlit/font/NanumGothic.ttf'
+    #font_path = './streamlit/font/NanumGothic.ttf'
+    font_path = 'C:/Windows/Fonts/NanumGothic.ttf'
     # 폰트 프로퍼티 설정
     font_prop = fm.FontProperties(fname=font_path, size=12)
+    plt.ylabel('가격', fontproperties=fontprop)
+    plt.title('가격변동 추이', fontproperties=fontprop)
+    plt.show()
     # matplotlib의 폰트를 설정
-    plt.rcParams['font.family'] = font_prop.get_name()
+    # plt.rcParams['font.family'] = font_prop.get_name()
     
     # 페이지 제목 설정
     st.title("수자원 관리 : 강수 및 지하수 분석")

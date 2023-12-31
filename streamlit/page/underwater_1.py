@@ -24,8 +24,8 @@ def app():
     font_path = 'C:/Windows/Fonts/NanumGothic.ttf'
     # 폰트 프로퍼티 설정
     font_prop = fm.FontProperties(fname=font_path, size=12)
-    plt.ylabel('가격', fontproperties=fontprop)
-    plt.title('가격변동 추이', fontproperties=fontprop)
+    plt.title('나눔고딕 제목', fontproperties=fontprop)
+    plt.plot(data)
     plt.show()
     # matplotlib의 폰트를 설정
     # plt.rcParams['font.family'] = font_prop.get_name()

@@ -46,7 +46,7 @@ def app():
                 """)
     
     # Initialize the Earth Engine module.
-    ee.Initialize()
+    geemap.ee_initialize()
 
     national_parks = parks.get_parks()
 
@@ -86,7 +86,7 @@ def app():
             submitted = st.form_submit_button("Submit")
 
         if submitted:
-            ee.Initialize()
+            geemap.ee_initialize()
         
             loc = change.get_aoi(selected_park, uploaded_file)
             geo_loc = loc.geometry()
@@ -341,7 +341,7 @@ def app():
             submitted = st.form_submit_button("Submit")
             
         if submitted:
-            ee.Initialize()
+            geemap.ee_initialize()
         
             loc = change.get_aoi(selected_park, uploaded_file)
             geo_loc = loc.geometry()

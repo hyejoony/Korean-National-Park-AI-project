@@ -44,6 +44,7 @@ def app():
                 1. 원하는 국립공원 선택 또는 geojson 파일 업로드로 관심 지역을 설정합니다.
                 2. 탐지 기간을 설정합니다.
                 3. 'submit' 버튼을 클릭하면 관심 지역의 강수 및 지하수 분석을 시작합니다.
+                ✅ 사이드바 오른쪽 상단의 X 표시를 눌러 사이드바를 닫아주시면 최적의 서비스를 경험하실 수 있습니다
                 """)
 
     # Initialize the Earth Engine module.
@@ -389,7 +390,7 @@ def app():
                 # 범례를 그래프 제목 아래에 배치
                 handles = sum([ax.get_legend_handles_labels()[0] for ax in [ax1, ax2]], [])
                 labels = sum([ax.get_legend_handles_labels()[1] for ax in [ax1, ax2]], [])
-                fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(1.05, -0.05), ncol=3)
+                fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(1.05, 0.05), ncol=3)
 
                 
                 # 스트림릿에 그래프 표시
@@ -442,7 +443,7 @@ def app():
 
         if submitted:
             st.markdown("""
-                        ✅사이드바 오른쪽 상단의 X 표시를 눌러 사이드바를 닫아주시면 최적의 서비스를 경험하실 수 있습니다.\n
+                        ✅ 사이드바 오른쪽 상단의 X 표시를 눌러 사이드바를 닫아주시면 최적의 서비스를 경험하실 수 있습니다.\n
                         ✅ 분석에 사용된 데이터는 1km 해상도입니다. 이는 각 1km x 1km 격자 내에서 측정된 값입니다. \n
                         　　따라서 이 값은 대규모 지역의 대표적인 수자원 수준을 나타내며,\n
                         　　특정 지점에서의 상세한 변화나 작은 규모의 데이터는 반영하지 않을 수 있습니다.

@@ -28,7 +28,9 @@ def app():
     # 페이지 제목 설정
     st.title("수자원 관리 : 강수 및 지하수 분석")
     st.text("""
-        사용자는 선택한 지역에 대한 연평균 강수량과 지하수 재충전량을 히트맵으로 시각화한 지도와 월별 강수량, 잠재 증발산량, 지하수 재충전량 그래프를 통해 수자원 변화를 상세히 이해할 수 있습니다. 
+        사용자는 선택한 지역에 대한 
+        1. 연평균 강수량과 지하수 재충전량을 히트맵으로 시각화한 지도
+        2. 월별 강수량, 잠재 증발산량, 지하수 재충전량 그래프를 통해 수자원 변화를 상세히 이해할 수 있습니다. 
 
         이를 통해 토양이나 식생에 물이 얼마나 공급되는지를 보여주며, 수자원 관리에 필수적인 정보를 제공합니다.
         또한, 관심 지역의 연평균 지하수 재충전량을 통해 지속 가능한 수자원 관리 및 보전 전략 수립에 있어 귀중한 기초 자료로 활용될 수 있습니다. 
@@ -366,7 +368,7 @@ def app():
                 # 증발산량 막대 그래프를 그립니다.
                 color_pet = 'tab:orange'
                 ax1.bar(rdf_aggregated.index, rdf_aggregated['pet'], color=color_pet, label='평균 증발산량', alpha=0.2, width=6)
-                ax1.set_xlabel('Date')
+                ax1.set_xlabel('날')
                 ax1.tick_params(axis='y', labelcolor='black')
                 #ax1.legend(loc='upper left')
                 
@@ -388,7 +390,7 @@ def app():
                 # 범례를 그래프 제목 아래에 배치
                 handles = sum([ax.get_legend_handles_labels()[0] for ax in [ax1, ax2]], [])
                 labels = sum([ax.get_legend_handles_labels()[1] for ax in [ax1, ax2]], [])
-                fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -1.0), ncol=3)
+                fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.1), ncol=3)
                 
                 # 스트림릿에 그래프 표시
                 st.pyplot(fig)

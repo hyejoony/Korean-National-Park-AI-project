@@ -25,7 +25,6 @@ def app():
     # 폰트 프로퍼티 설정
     fontprop = fm.FontProperties(fname=font_path, size=12)
     plt.title('나눔고딕 제목', fontproperties=fontprop)
-    plt.plot(data)
     plt.show()
     # matplotlib의 폰트를 설정
     # plt.rcParams['font.family'] = font_prop.get_name()

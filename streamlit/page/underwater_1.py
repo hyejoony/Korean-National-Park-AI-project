@@ -92,8 +92,7 @@ def app():
         if submitted:
             st.markdown("""
                         ✅ 사이드바 오른쪽 상단의 X 표시를 눌러 사이드바를 닫아주시면 최적의 서비스를 경험하실 수 있습니다.\n
-                        ✅ 분석에 사용된 데이터는 1km 해상도입니다. 이는 각 1km x 1km 격자 내에서 측정된 값입니다. \n
-                            따라서 이 값은 대규모 지역의 대표적인 수자원 수준을 나타내며, 특정 지점에서의 상세한 변화나 작은 규모의 데이터는 반영하지 않을 수 있습니다.
+                        ✅ 분석에 사용된 데이터는 1km 해상도입니다. 이는 각 1km x 1km 격자 내에서 측정된 값입니다. 따라서 이 값은 대규모 지역의 대표적인 수자원 수준을 나타내며, 특정 지점에서의 상세한 변화나 작은 규모의 데이터는 반영하지 않을 수 있습니다.
                         """)
             st.write("")
             with st.spinner('강수 및 지하수 데이터를 분석하는 중입니다! 약 30초 정도 소요됩니다.'):
@@ -365,7 +364,7 @@ def app():
                 # 증발산량 막대 그래프를 그립니다.
                 color_pet = 'tab:orange'
                 ax1.bar(rdf_aggregated.index, rdf_aggregated['pet'], color=color_pet, label='평균 증발산량', alpha=0.2, width=6)
-                ax1.set_xlabel('날')
+                ax1.set_xlabel('날짜')
                 ax1.tick_params(axis='y', labelcolor='black')
                 #ax1.legend(loc='upper left')
                 
@@ -714,7 +713,7 @@ def app():
                 # 증발산량 막대 그래프를 그립니다.
                 color_pet = 'tab:orange'
                 ax1.bar(rdf_aggregated.index, rdf_aggregated['pet'], color=color_pet, label='평균 증발산량', alpha=0.2, width=6)
-                ax1.set_xlabel('Date')
+                ax1.set_xlabel('날짜')
                 ax1.tick_params(axis='y', labelcolor='black')
                 ax1.legend(loc='upper right')
                 

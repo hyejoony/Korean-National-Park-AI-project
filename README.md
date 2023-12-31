@@ -46,7 +46,8 @@
   <img src="image/landslide.gif"  width="800">
   </p>
   
-### How to run
+### How to use
+https://eye-of-bandal.streamlit.app/
 
 ### Tool
 - Language : Python

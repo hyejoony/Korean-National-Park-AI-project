@@ -369,7 +369,7 @@ def app():
                 ax1.bar(rdf_aggregated.index, rdf_aggregated['pet'], color=color_pet, label='평균 증발산량', alpha=0.2, width=6)
                 ax1.set_xlabel('Date')
                 ax1.tick_params(axis='y', labelcolor='black')
-                ax1.legend(ncol=2, upper left)
+                #ax1.legend(loc='upper left')
                 
                 # 지하수 재충전량 그래프를 그릴 두 번째 축을 만듭니다.
                 ax2 = ax1.twinx() 
@@ -377,7 +377,12 @@ def app():
                 ax2.set_ylabel('지하수 재충전량 (mm)', color=color_rech)
                 ax2.bar(rdf_aggregated.index, rdf_aggregated['rech'], color=color_rech, label='지하수 재충전량', alpha=1, width=6)
                 ax2.tick_params(axis='y', labelcolor=color_rech)
-                ax2.legend(loc='upper right')
+                #ax2.legend(loc='upper right')
+
+                # 범례를 그래프 제목 아래에 배치
+                handles = sum([ax.get_legend_handles_labels()[0] for ax in [ax1, ax2]], [])
+                labels = sum([ax.get_legend_handles_labels()[1] for ax in [ax1, ax2]], [])
+                fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 1.0), ncol=3)
                 
                 # x축의 눈금을 설정합니다.
                 ax1.set_xticks(rdf_aggregated.index)

@@ -389,7 +389,7 @@ def app():
                 # 범례를 그래프 제목 아래에 배치
                 handles = sum([ax.get_legend_handles_labels()[0] for ax in [ax1, ax2]], [])
                 labels = sum([ax.get_legend_handles_labels()[1] for ax in [ax1, ax2]], [])
-                fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.7), ncol=3)
+                fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.2), ncol=3)
                 
                 # 스트림릿에 그래프 표시
                 st.pyplot(fig)

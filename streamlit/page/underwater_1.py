@@ -95,10 +95,10 @@ def app():
                         ✅ 분석에 사용된 데이터는 1km 해상도입니다. 이는 각 1km x 1km 격자 내에서 측정된 값입니다. \n
                             따라서 이 값은 대규모 지역의 대표적인 수자원 수준을 나타내며, 특정 지점에서의 상세한 변화나 작은 규모의 데이터는 반영하지 않을 수 있습니다.
                         """)
-            with st.write("")
-                st.spinner('강수 및 지하수 데이터를 분석하는 중입니다! 약 30초 정도 소요됩니다.'):
+            st.write("")
+            with st.spinner('강수 및 지하수 데이터를 분석하는 중입니다! 약 30초 정도 소요됩니다.'):
 
-                
+
                 # Add Earth Engine drawing method to folium.
                 folium.Map.add_ee_layer = change.add_ee_layer
 

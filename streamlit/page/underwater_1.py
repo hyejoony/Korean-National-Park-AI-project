@@ -50,7 +50,7 @@ def app():
                 """)
 
     # Initialize the Earth Engine module.
-    ee.Initialize()
+    geemap.ee_initialize()
 
     national_parks = parks.get_parks()
 

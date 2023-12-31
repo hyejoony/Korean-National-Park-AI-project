@@ -23,7 +23,7 @@ def app():
     #font_path = './streamlit/font/NanumGothic.ttf'
     font_path = 'C:/Windows/Fonts/NanumGothic.ttf'
     # 폰트 프로퍼티 설정
-    font_prop = fm.FontProperties(fname=font_path, size=12)
+    fontprop = fm.FontProperties(fname=font_path, size=12)
     plt.title('나눔고딕 제목', fontproperties=fontprop)
     plt.plot(data)
     plt.show()

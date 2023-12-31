@@ -20,7 +20,7 @@ import change, parks
 import matplotlib.font_manager as fm
 
 def app():
-    fm._rebuild()
+    matplotlib.rcdefaults()
     font_path = './streamlit/font/malgun.ttf'
     # 폰트 프로퍼티 설정
     font_prop = fm.FontProperties(fname=font_path, size=12)

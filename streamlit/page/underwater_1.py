@@ -91,7 +91,7 @@ def app():
 
         if submitted:
             st.markdown("""
-                        ✅사이드바 오른쪽 상단의 X 표시를 눌러 사이드바를 닫아주시면 최적의 서비스를 경험하실 수 있습니다.\n
+                        ✅ 사이드바 오른쪽 상단의 X 표시를 눌러 사이드바를 닫아주시면 최적의 서비스를 경험하실 수 있습니다.\n
                         ✅ 분석에 사용된 데이터는 1km 해상도입니다. 이는 각 1km x 1km 격자 내에서 측정된 값입니다. \n
                         　　따라서 이 값은 대규모 지역의 대표적인 수자원 수준을 나타내며,\n
                         　　특정 지점에서의 상세한 변화나 작은 규모의 데이터는 반영하지 않을 수 있습니다.
@@ -389,7 +389,7 @@ def app():
                 # 범례를 그래프 제목 아래에 배치
                 handles = sum([ax.get_legend_handles_labels()[0] for ax in [ax1, ax2]], [])
                 labels = sum([ax.get_legend_handles_labels()[1] for ax in [ax1, ax2]], [])
-                fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 1.03), ncol=3)
+                fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.9), ncol=3)
                 
                 # 스트림릿에 그래프 표시
                 st.pyplot(fig)

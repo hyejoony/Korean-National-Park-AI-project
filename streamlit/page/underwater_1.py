@@ -23,13 +23,9 @@ def app():
 
     font_path = './streamlit/font/malgun.ttf'
     # 폰트 프로퍼티 설정
-    font_prop = fm.FontProperties(fname=font_path, size=12)
-    # 예시: 축 레이블에 폰트 적용
-    plt.xlabel('x축 레이블', fontproperties=font_prop)
-    plt.ylabel('y축 레이블', fontproperties=font_prop)
-    # 예시: 플롯 제목에 폰트 적용
-    plt.title('플롯 제목', fontproperties=font_prop)
-    # # matplotlib의 폰트를 설정
+    #font_prop = fm.FontProperties(fname=font_path, size=12)
+    plt.rcParams['font.family'] = 'Malgun Gothic'
+    # matplotlib의 폰트를 설정
     # plt.rcParams['font.family'] = font_prop.get_name()
     
     

@@ -38,7 +38,6 @@ def app():
     st.markdown('<hr style="border:1px solid green;"/>', unsafe_allow_html=True)
 
     with st.expander("수자원 관리 사용법"):
-        st.text("관심 지역의 연평균 강수량 및 지하수 재충전량을 지도로 확인하고, 월별 강수량&잠재 증발산량&지하수 재충전량 그래프를 제공받을 수 있습니다.")
         # 자세한 안내 메시지를 표시합니다.
         st.write("""
                 1. 원하는 국립공원 선택 또는 geojson 파일 업로드로 관심 지역을 설정합니다.
@@ -370,7 +369,7 @@ def app():
                 ax1.bar(rdf_aggregated.index, rdf_aggregated['pet'], color=color_pet, label='평균 증발산량', alpha=0.2, width=6)
                 ax1.set_xlabel('날짜')
                 ax1.tick_params(axis='y', labelcolor='black')
-                ax1.legend(loc='upper left',ncol=2)
+                #ax1.legend(loc='upper left')
                 
                 # 지하수 재충전량 그래프를 그릴 두 번째 축을 만듭니다.
                 ax2 = ax1.twinx() 
@@ -737,6 +736,11 @@ def app():
                 
                 # 타이틀을 설정합니다.
                 plt.title('월별 평균 강수량, 증발산량 및 총 지하수 재충전량')
+                
+                # 범례를 그래프 제목 아래에 배치
+                handles = sum([ax.get_legend_handles_labels()[0] for ax in [ax1, ax2]], [])
+                labels = sum([ax.get_legend_handles_labels()[1] for ax in [ax1, ax2]], [])
+                fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.8, 0.95), ncol=3)
                 
                 # 스트림릿에 그래프 표시
                 st.pyplot(fig)

@@ -18,15 +18,15 @@ import geemap.foliumap as eefolium  # eefolium 버전 사용
 
 import change, parks
 import matplotlib.font_manager as fm
+import matplotlib as mpl
 
 def app():
-    #font_path = './streamlit/font/NanumGothic.ttf'
-    font_path = 'C:/Windows/Fonts/NanumGothic.ttf'
+    # #font_path = './streamlit/font/NanumGothic.ttf'
+    # font_path = 'C:/Windows/Fonts/NanumGothic.ttf'
     # 폰트 프로퍼티 설정
-    fontprop = fm.FontProperties(fname=font_path, size=12)
-    plt.title('나눔고딕 제목', fontproperties=fontprop)
-    plt.show()
+    # fontprop = fm.FontProperties(fname=font_path, size=12)
     # matplotlib의 폰트를 설정
+    mpl.rcParams['font.family'] = 'NanumBarunGothic'
     # plt.rcParams['font.family'] = font_prop.get_name()
     
     # 페이지 제목 설정

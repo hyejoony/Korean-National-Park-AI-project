@@ -26,8 +26,12 @@ def app():
     # 폰트 프로퍼티 설정
     # fontprop = fm.FontProperties(fname=font_path, size=12)
     # matplotlib의 폰트를 설정
-    mpl.rcParams['font.family'] = 'NanumBarunGothic'
+    # mpl.rcParams['font.family'] = 'NanumBarunGothic'
     # plt.rcParams['font.family'] = font_prop.get_name()
+
+    font_path = './streamlit/font/NanumGothic.ttf'  # 폰트 파일 경로를 정확하게 지정하세요.
+    font_manager.fontManager.addfont(font_path)
+    mpl.rcParams['font.family'] = 'NanumGothic'
     
     # 페이지 제목 설정
     st.title("수자원 관리 : 강수 및 지하수 분석")

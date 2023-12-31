@@ -21,15 +21,7 @@ import matplotlib.font_manager as fm
 import matplotlib as mpl
 
 def app():
-    # #font_path = './streamlit/font/NanumGothic.ttf'
-    # font_path = 'C:/Windows/Fonts/NanumGothic.ttf'
-    # 폰트 프로퍼티 설정
-    # fontprop = fm.FontProperties(fname=font_path, size=12)
-    # matplotlib의 폰트를 설정
-    # mpl.rcParams['font.family'] = 'NanumBarunGothic'
-    # plt.rcParams['font.family'] = font_prop.get_name()
-
-    font_path = './streamlit/font/NanumGothic.ttf'  # 폰트 파일 경로를 정확하게 지정하세요.
+    font_path = './streamlit/font/NanumGothic.ttf' 
     fm.fontManager.addfont(font_path)
     mpl.rcParams['font.family'] = 'NanumGothic'
     
@@ -721,7 +713,7 @@ def app():
                 ax1.bar(rdf_aggregated.index, rdf_aggregated['pet'], color=color_pet, label='평균 증발산량', alpha=0.2, width=6)
                 ax1.set_xlabel('Date')
                 ax1.tick_params(axis='y', labelcolor='black')
-                ax1.legend(loc='upper left')
+                ax1.legend(loc='upper right')
                 
                 # 지하수 재충전량 그래프를 그릴 두 번째 축을 만듭니다.
                 ax2 = ax1.twinx() 

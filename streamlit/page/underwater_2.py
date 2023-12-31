@@ -18,6 +18,7 @@ from datetime import datetime, timedelta
 
 import change, parks
 import matplotlib.font_manager as fm
+import matplotlib as mpl
 
 def app():
     font_path = './streamlit/font/NanumGothic.ttf' 

@@ -23,9 +23,6 @@ def app():
     st.markdown('<hr style="border:1px solid green;"/>', unsafe_allow_html=True)# 스트림릿 앱에서 표시
     
     with st.expander("산사태 예측 지도 사용법"):
-        st.markdown(f"""
-        <iframe width=100% height="600"str src="https://www.youtube.com/watch?v=wKiN_aHV0Ek" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        """, unsafe_allow_html=True)
 
         # 자세한 안내 메시지를 표시합니다.
         st.write("""

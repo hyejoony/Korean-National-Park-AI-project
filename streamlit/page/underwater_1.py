@@ -30,7 +30,7 @@ def app():
     # plt.rcParams['font.family'] = font_prop.get_name()
 
     font_path = './streamlit/font/NanumGothic.ttf'  # 폰트 파일 경로를 정확하게 지정하세요.
-    font_manager.fontManager.addfont(font_path)
+    fm.fontManager.addfont(font_path)
     mpl.rcParams['font.family'] = 'NanumGothic'
     
     # 페이지 제목 설정

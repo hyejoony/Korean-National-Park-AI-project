@@ -47,6 +47,7 @@
   </p>
   
 ### How to run
+https://eye-of-bandal.streamlit.app/
 
 ### Tool
 - Language : Python

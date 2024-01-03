@@ -109,13 +109,13 @@ def app():
                 fig2 = plot_components_plotly(m, forecast)  # Plotly figure를 반환합니다.
                     
                 
-                st.markdown("""
-                                <style>
-                                    .st-emotion-cache-bro0bh {
-                                            padding-top: 7em;
-                                        }
-                                </style>
-                            """, unsafe_allow_html=True)
+                # st.markdown("""
+                #                 <style>
+                #                     .st-emotion-cache-bro0bh {
+                #                             padding-top: 7em;
+                #                         }
+                #                 </style>
+                #             """, unsafe_allow_html=True)
 
                 with st.container():
                     col1, buff, col2 = st.columns([2, 0.2, 1])
@@ -201,13 +201,13 @@ def app():
                 fig2 = plot_components_plotly(m, forecast)  # Plotly figure를 반환합니다.
                     
                 
-                st.markdown("""
-                                <style>
-                                    .st-emotion-cache-bro0bh {
-                                            padding-top: 6em;
-                                        }
-                                </style>
-                            """, unsafe_allow_html=True)
+                # st.markdown("""
+                #                 <style>
+                #                     .st-emotion-cache-bro0bh {
+                #                             padding-top: 6em;
+                #                         }
+                #                 </style>
+                #             """, unsafe_allow_html=True)
 
                 with st.container():
                     col1, buff, col2 = st.columns([2, 0.2, 1])

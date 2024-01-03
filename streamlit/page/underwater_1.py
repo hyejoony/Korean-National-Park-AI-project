@@ -46,9 +46,6 @@ def app():
                 ✅ 사이드바 오른쪽 상단의 X 표시를 눌러 사이드바를 닫아주시면 최적의 서비스를 경험하실 수 있습니다.
                 """)
 
-    # Initialize the Earth Engine module.
-    geemap.ee_initialize()
-
     national_parks = parks.get_parks()
 
     tab1, tab2 = st.tabs(['국립공원 선택', 'GeoJson 파일 업로드'])

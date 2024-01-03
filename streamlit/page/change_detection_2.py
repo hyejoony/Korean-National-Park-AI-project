@@ -110,13 +110,13 @@ def app():
                 fig2 = plot_components_plotly(m, forecast)  # Plotly figure를 반환합니다.
                     
                 
-                # st.markdown("""
-                #                 <style>
-                #                     .st-emotion-cache-bro0bh {
-                #                             padding-top: 7em;
-                #                         }
-                #                 </style>
-                #             """, unsafe_allow_html=True)
+                st.markdown("""
+                                <style>
+                                    .st-emotion-cache-bro0bh {
+                                            padding-top: 7em;
+                                        }
+                                </style>
+                            """, unsafe_allow_html=True)
 
                 with st.container():
                     col1, buff, col2 = st.columns([2, 0.2, 1])
@@ -130,7 +130,7 @@ def app():
                                     검은색 점이 실제 값에 해당하며, 실제값을 기반으로 패턴을 학습하여 약 1년간의 미래 식생지수를 파란색 선으로 예측해 주고 있습니다.\n
                                     사용자가 보고 싶은 기간을 그래프의 확대/축소 기능을 통해 자세히 들여다볼 수 있습니다. 
                                     """)
-                with st.container():
+                with st. container():
                     col1, buff, col2 = st.columns([2, 0.2, 1])
                     with col1:        
                         st.plotly_chart(fig2, use_container_width=True)  # 인터랙티브 그래프를 표시합니다.
@@ -202,13 +202,13 @@ def app():
                 fig2 = plot_components_plotly(m, forecast)  # Plotly figure를 반환합니다.
                     
                 
-                # st.markdown("""
-                #                 <style>
-                #                     .st-emotion-cache-bro0bh {
-                #                             padding-top: 6em;
-                #                         }
-                #                 </style>
-                #             """, unsafe_allow_html=True)
+                st.markdown("""
+                                <style>
+                                    .st-emotion-cache-bro0bh {
+                                            padding-top: 6em;
+                                        }
+                                </style>
+                            """, unsafe_allow_html=True)
 
                 with st.container():
                     col1, buff, col2 = st.columns([2, 0.2, 1])
@@ -222,7 +222,7 @@ def app():
                                     검정색 점이 실제 값에 해당하며, 실제값을 기반으로 패턴을 학습하여 약 1년간의 미래 식생지수를 파란색 선으로 예측해주고 있습니다.\n 
                                     사용자가 보고 싶은 기간을 그래프의 확대/축소 기능을 통해 자세히 들여다 볼 수 있습니다. 
                                     """)
-                with st.container():
+                with st. container():
                     col1, buff, col2 = st.columns([2, 0.2, 1])
                     with col1:        
                         st.plotly_chart(fig2, use_container_width=True)  # 인터랙티브 그래프를 표시합니다.

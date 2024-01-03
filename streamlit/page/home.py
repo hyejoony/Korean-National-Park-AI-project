@@ -56,11 +56,11 @@ def app():
 
     st.write("")
     st.write("")
-    st.write("🖥️ 각 기능별 시연영상을 [이곳](https://www.youtube.com/channel/UCw4KHPlH3y_TzHhTXV63Zcg)에서 확인하세요!")
+    st.write("🖥️ 각 기능별 시연영상을 [이곳](https://www.youtube.com/channel/UCtk0XQBQcN8jkxhsbL3cscQ)에서 확인하세요!")
 
     #마크 다운바(분리 bar)
     st.markdown('<hr style="border:1px light gray;"/>', unsafe_allow_html=True)
-    st.write('※ 사용에 불편한 점이 생기면 개발자(✉️ eye.of.bandal00@gmail.com )에게 편히 연락주세요.')
+    st.write('※ 사용에 불편한 점이 생기면 개발자(✉️ eye.of.bandal@gmail.com )에게 편히 연락주세요.')
 
 # launch
 if __name__  == "__main__" :

@@ -18,17 +18,20 @@ import geemap.foliumap as eefolium  # eefolium 버전 사용
 
 import change, parks
 import matplotlib.font_manager as fm
-import matplotlib as mpl
 
 def app():
-    font_path = './streamlit/font/NanumGothic.ttf' 
-    fm.fontManager.addfont(font_path)
-    mpl.rcParams['font.family'] = 'NanumGothic'
-    
+
+    font_path = './font/MALGUN.TTF'
+    # 폰트 프로퍼티 설정
+    font_prop = fm.FontProperties(fname=font_path, size=12)
+    # matplotlib의 폰트를 설정
+    plt.rcParams['font.family'] = font_prop.get_name()
+
     # 페이지 제목 설정
     st.title("수자원 관리 : 강수 및 지하수 분석")
     st.text("""
-        선택한 지역에 대한 연평균 강수량과 지하수 재충전량 히트맵 지도와 월별 강수량, 잠재 증발산량, 지하수 재충전량 그래프를 통해 수자원 변화를 상세히 이해할 수 있습니다. 
+        사용자는 선택한 지역에 대한 연평균 강수량과 지하수 재충전량을 히트맵으로 시각화한 지도, 
+        월별 강수량, 잠재 증발산량, 지하수 재충전량 그래프를 통해 수자원 변화를 상세히 이해할 수 있습니다. 
 
         이를 통해 토양이나 식생에 물이 얼마나 공급되는지를 보여주며, 수자원 관리에 필수적인 정보를 제공합니다.
         또한, 관심 지역의 연평균 지하수 재충전량을 통해 지속 가능한 수자원 관리 및 보전 전략 수립에 있어 귀중한 기초 자료로 활용될 수 있습니다. 
@@ -38,12 +41,12 @@ def app():
     st.markdown('<hr style="border:1px solid green;"/>', unsafe_allow_html=True)
 
     with st.expander("수자원 관리 사용법"):
+        st.text("관심 지역의 강수량 및 연간 지하수 재충전량을 확인할 수 있습니다.")
         # 자세한 안내 메시지를 표시합니다.
         st.write("""
                 1. 원하는 국립공원 선택 또는 geojson 파일 업로드로 관심 지역을 설정합니다.
                 2. 탐지 기간을 설정합니다.
-                3. 'submit' 버튼을 클릭하면 관심 지역의 강수 및 지하수 분석을 시작합니다.\n
-                ✅ 사이드바 오른쪽 상단의 X 표시를 눌러 사이드바를 닫아주시면 최적의 서비스를 경험하실 수 있습니다.
+                3. 'submit' 버튼을 클릭하면 관심 지역의 강수 및 지하수 분석을 시작합니다.
                 """)
 
     national_parks = parks.get_parks()
@@ -88,16 +91,15 @@ def app():
 
         if submitted:
             st.markdown("""
-                        ✅ 사이드바 오른쪽 상단의 X 표시를 눌러 사이드바를 닫아주시면 최적의 서비스를 경험하실 수 있습니다.\n
+                        ✅사이드바 오른쪽 상단의 X 표시를 눌러 사이드바를 닫아주시면 최적의 서비스를 경험하실 수 있습니다.\n
                         ✅ 분석에 사용된 데이터는 1km 해상도입니다. 이는 각 1km x 1km 격자 내에서 측정된 값입니다. \n
                         　　따라서 이 값은 대규모 지역의 대표적인 수자원 수준을 나타내며,\n
                         　　특정 지점에서의 상세한 변화나 작은 규모의 데이터는 반영하지 않을 수 있습니다.
                 
                         """)
-            st.write("")
             with st.spinner('강수 및 지하수 데이터를 분석하는 중입니다! 약 30초 정도 소요됩니다.'):
 
-
+                
                 # Add Earth Engine drawing method to folium.
                 folium.Map.add_ee_layer = change.add_ee_layer
 
@@ -364,9 +366,9 @@ def app():
                 # 증발산량 막대 그래프를 그립니다.
                 color_pet = 'tab:orange'
                 ax1.bar(rdf_aggregated.index, rdf_aggregated['pet'], color=color_pet, label='평균 증발산량', alpha=0.2, width=6)
-                ax1.set_xlabel('날짜')
+                ax1.set_xlabel('Date')
                 ax1.tick_params(axis='y', labelcolor='black')
-                #ax1.legend(loc='upper left')
+                ax1.legend(loc='upper left')
                 
                 # 지하수 재충전량 그래프를 그릴 두 번째 축을 만듭니다.
                 ax2 = ax1.twinx() 
@@ -374,7 +376,7 @@ def app():
                 ax2.set_ylabel('지하수 재충전량 (mm)', color=color_rech)
                 ax2.bar(rdf_aggregated.index, rdf_aggregated['rech'], color=color_rech, label='지하수 재충전량', alpha=1, width=6)
                 ax2.tick_params(axis='y', labelcolor=color_rech)
-                #ax2.legend(loc='upper right')
+                ax2.legend(loc='upper right')
                 
                 # x축의 눈금을 설정합니다.
                 ax1.set_xticks(rdf_aggregated.index)
@@ -382,12 +384,6 @@ def app():
                 
                 # 타이틀을 설정합니다.
                 plt.title('월별 평균 강수량, 증발산량 및 총 지하수 재충전량')
-
-                # 범례를 그래프 제목 아래에 배치
-                handles = sum([ax.get_legend_handles_labels()[0] for ax in [ax1, ax2]], [])
-                labels = sum([ax.get_legend_handles_labels()[1] for ax in [ax1, ax2]], [])
-                fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.8, 0.95), ncol=3)
-
                 
                 # 스트림릿에 그래프 표시
                 st.pyplot(fig)
@@ -439,13 +435,12 @@ def app():
 
         if submitted:
             st.markdown("""
-                        ✅ 사이드바 오른쪽 상단의 X 표시를 눌러 사이드바를 닫아주시면 최적의 서비스를 경험하실 수 있습니다.\n
+                        ✅사이드바 오른쪽 상단의 X 표시를 눌러 사이드바를 닫아주시면 최적의 서비스를 경험하실 수 있습니다.\n
                         ✅ 분석에 사용된 데이터는 1km 해상도입니다. 이는 각 1km x 1km 격자 내에서 측정된 값입니다. \n
                         　　따라서 이 값은 대규모 지역의 대표적인 수자원 수준을 나타내며,\n
                         　　특정 지점에서의 상세한 변화나 작은 규모의 데이터는 반영하지 않을 수 있습니다.
                 
                         """)
-            st.write("")
             with st.spinner('강수 및 지하수 데이터를 분석하는 중입니다! 약 30초 정도 소요됩니다.'):
 
                 
@@ -683,7 +678,7 @@ def app():
                 st.write("")
                 st.write("")
                 st.markdown("""
-                            **:rainbow[왼쪽 범례]** : 연평균 지하수 재충전률(mm/year)\n
+                            **:rainbow[왼쪽 범례]** : 평균 연간 재충전률(mm/year)\n
                             **:blue[오른쪽 범례]** : 연평균 강수량(mm/year)
                     
                             """)
@@ -715,9 +710,9 @@ def app():
                 # 증발산량 막대 그래프를 그립니다.
                 color_pet = 'tab:orange'
                 ax1.bar(rdf_aggregated.index, rdf_aggregated['pet'], color=color_pet, label='평균 증발산량', alpha=0.2, width=6)
-                ax1.set_xlabel('날짜')
+                ax1.set_xlabel('Date')
                 ax1.tick_params(axis='y', labelcolor='black')
-                ax1.legend(loc='upper right')
+                ax1.legend(loc='upper left')
                 
                 # 지하수 재충전량 그래프를 그릴 두 번째 축을 만듭니다.
                 ax2 = ax1.twinx() 
@@ -733,11 +728,6 @@ def app():
                 
                 # 타이틀을 설정합니다.
                 plt.title('월별 평균 강수량, 증발산량 및 총 지하수 재충전량')
-                
-                # 범례를 그래프 제목 아래에 배치
-                handles = sum([ax.get_legend_handles_labels()[0] for ax in [ax1, ax2]], [])
-                labels = sum([ax.get_legend_handles_labels()[1] for ax in [ax1, ax2]], [])
-                fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.8, 0.95), ncol=3)
                 
                 # 스트림릿에 그래프 표시
                 st.pyplot(fig)

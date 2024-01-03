@@ -5,6 +5,8 @@ import ee
 
 from page import home, change_detection_1, change_detection_2, change_detection_3, underwater_1, underwater_2, landslide_mod
 
+geemap.ee_initialize() # GEE API를 초기화합니다.
+
 # 이미지 경로 설정
 image_path = "./streamlit/image/knps2.png"
 bigleader_path = "./streamlit/image/bigleader.png"

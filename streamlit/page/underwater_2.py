@@ -42,9 +42,6 @@ def app():
                 2. 관측 시작/끝 날짜를 선택한 후 'submit' 버튼을 클릭하면 토양 프로파일링 시작!
                 3. 깊이에 따른 토양 성분 그래프와 깊이에 따른 토양 수분 특성 그래프가 그려집니다.
                 """)
-    
-    # Initialize the Earth Engine module.
-    geemap.ee_initialize()
 
     national_parks = parks.get_parks()
 
@@ -84,7 +81,6 @@ def app():
             submitted = st.form_submit_button("Submit")
 
         if submitted:
-            geemap.ee_initialize()
         
             loc = change.get_aoi(selected_park, uploaded_file)
             geo_loc = loc.geometry()
@@ -339,7 +335,6 @@ def app():
             submitted = st.form_submit_button("Submit")
             
         if submitted:
-            geemap.ee_initialize()
         
             loc = change.get_aoi(selected_park, uploaded_file)
             geo_loc = loc.geometry()

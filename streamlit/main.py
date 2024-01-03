@@ -6,8 +6,6 @@ import geemap
 
 from page import home, change_detection_1, change_detection_2, change_detection_3, underwater_1, underwater_2, landslide_mod
 
-geemap.ee_initialize() # GEE API를 초기화합니다.
-
 # 이미지 경로 설정
 image_path = "./streamlit/image/knps2.png"
 bigleader_path = "./streamlit/image/bigleader.png"
@@ -24,6 +22,8 @@ def layout():
     # 위에서 정의한 함수 세개의 이미지 파일에 적용
     encoded_image = get_image_base64(image_path)
     bigleader_encoded_image = get_image_base64(bigleader_path)
+
+    geemap.ee_initialize()    # GEE API를 초기화합니다.
 
     # # HTML과 함께 이 텍스트 형식의 이미지들을 웹 페이지에 표시
     # st.markdown(f"""

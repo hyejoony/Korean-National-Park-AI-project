@@ -117,7 +117,7 @@ def app():
                 #                 </style>
                 #             """, unsafe_allow_html=True)
 
-                with st.container():
+                st.container():
                     col1, buff, col2 = st.columns([2, 0.2, 1])
                     with col1:
                         # Streamlit에 그래프 표시
@@ -209,7 +209,7 @@ def app():
                 #                 </style>
                 #             """, unsafe_allow_html=True)
 
-                with st.container():
+                st.container():
                     col1, buff, col2 = st.columns([2, 0.2, 1])
                     with col1:
                         # Streamlit에 그래프 표시

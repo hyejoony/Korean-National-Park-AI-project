@@ -3,8 +3,6 @@
 - Project Goal : `The problem is that the area of the national park is vast, with each employee responsible for managing an area ten times the size of a soccer field.` Therefore, we aim to improve work efficiency by developing a Satellite(SAR) and AI-based Nature Change Detection Monitoring Service('Eye of Bandal'). `This service will provide information from the office about the areas that need to be prioritized for management before going out into the field.`
 
 # 
-#### How? Using Geemap 
-
 <p align="center">
   <img src="image/logo.png" alt="logo"/>
 </p>

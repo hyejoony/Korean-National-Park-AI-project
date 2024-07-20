@@ -1,5 +1,8 @@
 # 'Eye of Bandal' Korean National Park AI Solution Service
 ### Sentinel Satellite Based Nature Change Detection Platform 
+### - Project Goal : The area of the national park is vast, with each employee responsible for managing an area ten times the size of a soccer field. Therefore, we aim to improve work efficiency by developing a Satellite(SAR) and AI-based Nature Change Detection Monitoring Service. This service will provide information from the office about the areas that need to be prioritized for management before going out into the field.
+
+
 #### Using Geemap 
 
 <p align="center">
